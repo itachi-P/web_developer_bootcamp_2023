@@ -1,0 +1,13 @@
+p {
+	text-align: center;
+	padding: 1em;
+	color: #fff;
+	background-color: #000;
+}
+
+p.copyright {
+	text-align: left;
+	padding: 1em;
+	color: #0cf;
+	background-color: #fcc;
+}
