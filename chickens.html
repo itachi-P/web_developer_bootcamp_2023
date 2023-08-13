@@ -9,6 +9,8 @@
 </head>
 
 <body>
+	<!--現在のルールではCSSによらないHTMLタグや属性による見た目の変更は非推奨-->
+	<!--HTMLはあくまで文書素材とし、装飾部分はStyleSheetに分離するのがモダン-->
 	<nav>
 		<ul>
 			<li><a href="home">ホームへ</a></li>
@@ -31,7 +33,6 @@
 
 		<!-- alt属性はアクセシビリティ（テキストリーダー対応）に配慮して記述した方が望ましい -->
 		<img src="pictures/chicken.png" alt="ニワトリの画像">
-		<hr>
 		<a href="https://google.com/" target="_blank">ここはGoogleへのリンクです(別タブで開きます)</a>
 		<a href="about.html">About</a>
 
@@ -87,25 +88,43 @@
 				<li>三重地鶏</li>
 			</ul>
 		</ol>
-		<img
-			src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Chicks_of_many_breeds.tif/lossy-page1-440px-Chicks_of_many_breeds.tif.jpg">
-		<p>上付き文字&lt;sup&gt;(super)、下付き文字&lt;sub&gt;</p>
-		<h2>a<sup>2</sup> 2<sup>1</sup>/<sub>2</sub> H<sub>2</sub>O</h2>
-		<a href="https://html.spec.whatwg.org/multipage/named-characters.html">エンティティコード(&で始まり;で終わる特殊な文字や記号)一覧</a>
-		<p>&#9824; &#x02660; &spades; &spadesuit;<br> <!--同じ記号でも16進数など何通りも記法がある-->
+		<figure>
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Chicks_of_many_breeds.tif/lossy-page1-440px-Chicks_of_many_breeds.tif.jpg">
+			<figcaption>様々な品種のニワトリのひよこ</figcaption>
+		</figure>
+		<hr>
+		<h3>上付き文字&lt;sup&gt;(super)、下付き文字&lt;sub&gt;</h3>
+		<h4>　指数(累乗)やlog(対数関数の底の部分)、化学式等を表現するのに有用</h4>
+		<table border="1" width="200px">
+			<caption>表示結果</caption>
+			<tr align="center">
+				<td>a<sup>2</sup></td>
+				<td>2<sup>1</sup>/<sub>2</sub></td>
+				<td>H<sub>2</sub>O</td>
+			</tr>
+		</table>
+		<hr>
+		<h3>特殊文字(上で&lt; や &gt;を表現するのも特殊文字)</h3>
+		<h4>　そのまま記述するとHTMLタグとして解釈され、期待と違う処理がされる(かもしれない)</h4>
+		<p>特殊文字はHTMLエンティティコードと呼ばれる記法(&で始まり;で終わる)で表現する</p>
+		<a href="https://html.spec.whatwg.org/multipage/named-characters.html">エンティティコード対応表一覧</a>
+		<p>※同じ記号でも&amp;spades;など直感的に覚えやすい名前の他に10進数や16進数表記など何通りも記法がある<br>
+			&#9824; &#x02660; &spades; &spadesuit;<br>
 			&#x022FD; &#x021D4; &copy; &#x000A9; &copysr; &#x02117; &reg; &#x000AE; &trade; &#x02122; <br>
 			&para; &#x000B6; &sect; &#x000A7; &euro; &#x020AC; &cent; &#x000A2; &pound; &#x000A3; &curren; &#x000A4;<br>
 			&yen; &#x000A5; &brvbar; &#x000A6; &uml; &#x000A8; &die; &#x000A8; &macr; &#x000AF;</p>
 
 	</main>
 	<hr>
+
 	<footer>
 		<p class="copyright" name="copyright">&copy; 2023 Coltipedia
 			このページを無断で複製・転載することを禁じます。
 		</p>
 		<ul>
-			<li><a href="contact">コンタクト</a></li>
-			<li><a href="help">ヘルプ</a></li>
+			<li><a href="contact">コンタクト(ダミー)</a></li>
+			<li><a href="help">ヘルプ(ダミー)</a></li>
 		</ul>
 	</footer>
 </body>

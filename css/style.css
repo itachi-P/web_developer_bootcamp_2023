@@ -8,6 +8,28 @@ p {
 p.copyright {
 	text-align: left;
 	padding: 1em;
-	color: #0cf;
-	background-color: #fcc;
+	color: #8cf;
+	background-color: #eec;
+}
+
+figure {
+	border: thin #c0c0c0 solid;
+	display: flex;
+	flex-flow: column;
+	padding: 5px;
+	max-width: 480px;
+	margin: auto;
+}
+
+img {
+	max-width: 480px;
+	max-height: 300px;
+}
+
+figcaption {
+	background-color: #de3;
+	color: #a6c;
+	font: italic smaller sans-serif;
+	padding: 3px;
+	text-align: center;
 }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Emmet Demo練習用ファイル</title>
+</head>
+
+<body>
+	<!-- main>section>h1{Emmet Demo} と書いてTab補完で以下のように展開される-->
+	<main>
+		<section>
+			<h1>Emmet Demo</h1>
+		</section>
+	</main>
+
+	<pre>
+	EmmetはVSCodeに標準搭載で、HTMLやCSSを効率的に記述するための機能。
+	以下は基本的にVSCodeのEmmet補完機能の練習用に書いたもの。
+	HTMLページとして正しい記法に従ってブラウザ上で表示することよりも、
+	VSCodeのエディター上でのEmmetの動作を確認することを目的としている。
+	</pre>
+
+	<h2>子要素 Child: >(>はHTMLとして表示するなら&gt;と書いた方が良い)</h2>
+	<h3>繰り返し要素 Multiplication: *</h3>
+	<h4>連続した番号 Item numbering: $</h4>
+	ul>li.item${hoge $$$}*3 と書いてTab補完すると以下のようなリストが展開される
+	<ul>
+		<li class="item1">hoge 001</li>
+		<li class="item2">hoge 002</li>
+		<li class="item3">hoge 003</li>
+	</ul>
+
+	<h2>兄弟要素 Sibling: + （入れ子構造ではなく並列）</h2>
+	<!-- + で繋ぐと入れ子でなくタグが同じ階層で列挙される-->
+	div+p+bq
+	<div></div>
+	<p></p>
+	<blockquote></blockquote>
+
+	<h3>一段上の親要素に登る(戻る) climb-up: ^</h3>
+	<h4>ちょっと複雑なので、考え込んでしまうようなら使わない</h4>
+	div+p+bq^p>span(ブロッククォートの子要素でなく同列でp>spanが作られる)
+	<div></div>
+	<p></p>
+	<blockquote></blockquote>
+	<p><span></span></p>
+
+	<h2>グループ化 Grouping: ()</h2>
+	<!-- ()で囲むとグループ化される(数学の計算順序っぽい挙動)-->
+	div>(header>ul>li*2>a)+footer>p <br>
+	※()無しだとfooter>pがdiv>headerの子要素になってしまう
+	<div>
+		<header>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+		</header>
+		<footer>
+			<p></p>
+		</footer>
+	</div>
+	<hr>
+	<aside>
+		<ul>
+			<li>小(丸)括弧 parenthesis: ()</li>
+			<li>中(角)括弧 brackets: []</li>
+			<li>大(波)括弧 braces: {} (curly bracesとも呼ばれる)</li>
+			<p>※小・中・大という分類は日本国内で言われがちなだけで統一されていない</p>
+	</aside>
+	<h2>属性を表現するには中(角)かっこ(brackets)[]</h2>
+	<h3>テキストを表現するには大(波)かっこ(braces){}</h3>
+	nav>ul>li*5>a[href=www.test$$.com]{test$$$}
+	<nav>
+		<ul>
+			<li><a href="www.test01.com">test001</a></li>
+			<li><a href="www.test02.com">test002</a></li>
+			<li><a href="www.test03.com">test003</a></li>
+			<li><a href="www.test04.com">test004</a></li>
+			<li><a href="www.test05.com">test005</a></li>
+		</ul>
+	</nav>
+
+	<!-- class属性は[class=]を使わず.で省略できる-->
+	<pre>
+	ul>li.item$*5 は ul>li[class=item$]*5 と同じ意味
+	
+	他にも色々あるが、基本的には上記のような記法で十分。
+	特によく使うのは子要素と兄弟要素、繰り返し要素、次いで連続した番号の記法。
+	これらを知っているかどうかでHTMLやCSSの記述効率が大きく変わる。
+	</pre>
+
+	nav>ul>li*4>a[href=#]{item$}
+	<nav>
+		<ul>
+			<li><a href="#">item1</a></li>
+			<li><a href="#">item2</a></li>
+			<li><a href="#">item3</a></li>
+			<li><a href="#">item4</a></li>
+		</ul>
+	</nav>
+
+</body>
+
+</html>
