@@ -10,40 +10,89 @@
 <body>
 	<h1>世界一重い鳥一覧</h1>
 	<table>
-		<tr>
-			<th>Common name</th>
-			<th>Average mass
-				[kg (lb)]</th>
-			<th>Maximum mass
-				[kg (lb)]</th>
-			<th>Flighted</th>
-		</tr>
-		<tr>
-			<td>Common ostrich</td>
-			<td>104 kg (229 lb)</td>
-			<td>156.8 kg (346 lb)</td>
-			<td>No</td>
-		</tr>
-		<tr>
-			<td>Somali ostrich</td>
-			<td>90 kg (220 lb)</td>
-			<td>130 kg (290 lb)</td>
-			<td>No</td>
-		</tr>
-		<!--普段から tr>td*4などemmet記法に慣れておく-->
-		<tr>
-			<td>Southern cassowary</td>
-			<td>45 kg (99 lb)</td>
-			<td>85 kg (187 lb)</td>
-			<td>No</td>
-		</tr>
-		<tr>
-			<td>Wild turkey</td>
-			<td>13.5 kg (30 lb)</td>
-			<td>39 kg (86 lb)</td>
-			<td>Yes</td>
-		</tr>
+		<!-- <thead>はヘッダーが2行以上の場合のグルーピングに特に有用(CSSの適用範囲やアクセシビリティ等)-->
+		<thead>
+			<tr>
+				<th>Common name</th>
+				<th>Average mass
+					[kg (lb)]</th>
+				<th>Maximum mass
+					[kg (lb)]</th>
+				<th>Flighted</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--普段から tr>td*4などemmet記法に慣れておく-->
+			<tr>
+				<td>Common ostrich</td>
+				<td>104 kg (229 lb)</td>
+				<td>156.8 kg (346 lb)</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>Somali ostrich</td>
+				<td>90 kg (220 lb)</td>
+				<td>130 kg (290 lb)</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>Southern cassowary</td>
+				<td>45 kg (99 lb)</td>
+				<td>85 kg (187 lb)</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>Wild turkey</td>
+				<td>13.5 kg (30 lb)</td>
+				<td>39 kg (86 lb)</td>
+				<td>Yes</td>
+			</tr>
+		</tbody>
 	</table>
+
+	<h2>V2</h2>
+	<!-- 本来border="1"はCSSで指定するのが一般的 -->
+	<table border="1">
+		<!-- <thead>はヘッダーが2行以上の場合のグルーピングに特に有用(CSSの適用範囲やアクセシビリティ等)-->
+		<thead>
+			<tr>
+				<th rowspan="2">Common name</th>
+				<th colspan="2">Average mass</th>
+				<th rowspan="2">Flighted</th>
+			</tr>
+			<tr>
+				<th>kg</th>
+				<th>lb</th>
+		</thead>
+		<tbody>
+			<!--普段から tr>td*4などemmet記法に慣れておく-->
+			<tr>
+				<td>Common ostrich</td>
+				<td>104</td>
+				<td>229</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>Somali ostrich</td>
+				<td>90</td>
+				<td>220</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>Southern cassowary</td>
+				<td>45</td>
+				<td>99</td>
+				<td>No</td>
+			</tr>
+			<tr>
+				<td>Wild turkey</td>
+				<td>13.5</td>
+				<td>30</td>
+				<td>Yes</td>
+			</tr>
+		</tbody>
+	</table>
+
 </body>
 
 </html>
