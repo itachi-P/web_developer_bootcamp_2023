@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form Demo</title>
+</head>
+
+<body>
+	<h1>Form Demo</h1>
+
+	<form action="/tacos"><!--送信先URLはダミー-->
+		<p>
+			<!--label要素は単なる説明でなく、機能的にinput要素と関連付けられる-->
+			<label for="username">ユーザー名：</label>
+			<input id="username" placeholder="ユーザー名">
+		</p>
+		<p>
+			<label for="password">パスワード：</label>
+			<input id="password" type="password" placeholder="パスワード">
+		</p>
+		<p>
+			<label for="color">好きな色：</label>
+			<input id="color" type="color">
+		</p>
+		<p>
+			<!--labelとinput要素は以下のような形でも関連付け可能-->
+			<label>好きな数値：
+				<input type="number" placeholder="数字を入力">
+			</label>
+		</p>
+		<hr>
+		<h3>input要素いろいろ（20種類以上）</h3>
+		<input type="button" value="押すなよ、絶対押すなよ">
+		複数選択可能
+		<input type="checkbox" name="c1" value="1" checked>
+		<input type="checkbox" name="c1" id="" value="2">
+		単一選択
+		<input type="radio" name="radio1" id="" value="A">
+		<input type="radio" name="radio1" id="" value="B">
+		<input type="file" name="" id="">
+		<!--名前の通り画面には表示されず、送信されるデータの一部となる-->
+		<input type="hidden" name="" id="" value="隠しデータ">
+		<br>
+
+		<input type="email" placeholder="メールアドレスを入力">
+		<input type="tel" placeholder="電話番号を入力">
+		<input type="url" placeholder="URLを入力">
+		<input type="search" placeholder="検索ワードを入力">
+		<p>
+			range(範囲選択)細かな設定が可能
+			<input type="range" min="0" max="100" step="25">
+		</p>
+		
+		<h5>※datetime型は廃止された（使用可能だが非推奨）</h5>
+		<input type="date"><input type="time"><br>
+		<!--input type="datetime"-->
+		<input type="datetime-local">
+		<br>
+		<input type="month">
+		<input type="week"><!--週番号（あまり出番無さそう）-->
+
+		<hr>
+		フォーム全体の挙動に影響するボタン
+		<input type="submit" value="指定の送り先にhttpリクエストを送信決定">
+		<input type="reset" value="フォームの入力値を初期状態に戻す">
+
+	</form>
+</body>
+
+</html>
