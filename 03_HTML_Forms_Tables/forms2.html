@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form Demo</title>
+</head>
+
+<body>
+	<h1>Form Demo</h1>
+
+	<form action="/tacos">
+		<p>
+			<!--label要素は単なる説明でなく、機能的にinput要素と関連付けられる-->
+			<label for="username">ユーザー名：</label>
+			<input id="username" placeholder="ユーザー名">
+		</p>
+		<p>
+			<label for="password">パスワード：</label>
+			<input id="password" type="password" placeholder="パスワード">
+		</p>
+		<p>
+			<label for="color">好きな色：</label>
+			<input id="color" type="color">
+		</p>
+		<p>
+			<!--labelとinput要素は以下のような形でも関連付け可能-->
+			<label>好きな数値：
+				<input type="number" placeholder="数字を入力">
+			</label>
+		</p>
+
+		<h3>input要素のボタン型とbutton要素</h3>
+		<!--<button>要素は標準で<button type="submit">-->
+		<button>送信</button>
+		<!--以下と機能は同じ-->
+		<input type="submit">
+		<button>送信じゃ！！！</button>
+		<input type="submit" value="送信じゃ！！！">
+
+	</form>
+</body>
+
+</html>
