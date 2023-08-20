@@ -79,14 +79,16 @@
 
 	<h2>バリデーション</h2>
 	<form action="/dummy">
-		<label for="first">名前：</label>
-		<input type="text" id="first" name="first" required>
 		<p>
 			<label for="username">ユーザー名：</label>
 			<input type="text" id="username" name="username" minlength="5" maxlength="20" required>
 		</p>
 		<p>
+			<label for="email">メールアドレス：</label>
 			<input type="email" required>
+		</p>
+		<p>
+			<label for="url">URL：</label>
 			<input type="url" required>
 		</p>
 		<button>送信</button>
