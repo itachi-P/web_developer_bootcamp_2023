@@ -25,7 +25,7 @@
 		</p>
 		<p>
 			<label>好きな数値：
-				<input type="number" placeholder="数字を入力" name="num">
+				<input type="number" placeholder="数字を入力" name="num" min="1" max="1000" step="10">
 			</label>
 		</p>
 		<button>送信</button>
@@ -72,6 +72,18 @@
 				<option value="steak" selected>ステーキ</option>
 			</select>
 		</p>
+		<p>
+			<label for="cheese">チーズの量：</label>
+			<input type="range" id="cheese" min="1" max="100" name="cheese_level" value="75">
+			<label for="tabasco">タバスコの量：</label>
+			<input type="range" id="tabasco" min="1" max="10000" name="tabasco_level" step="100">
+		</p>
+		<p>
+			<label for="comments">その他コメント：</label>
+			<br>
+			<textarea id="comments" rows="5" cols="40" placeholder="コメントを入力してください"></textarea>
+		</p>
+
 		<button>送信</button>
 	</form>
 </body>
