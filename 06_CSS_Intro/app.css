@@ -1,0 +1,18 @@
+h2 {
+	color: teal;
+	background-color: rgb(108,175,25);
+}
+
+button {
+	color: #f0f; /* #FF00FF, magentaと同じ */
+	background-color: cyan; /* #0FF, rgb(0, 255, 255)と同じ */
+}
+
+p {
+	color: olive;
+	background: papayawhip;
+}
+
+body {
+	background-color: rgb(55, 68, 168);
+}
