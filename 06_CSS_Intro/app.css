@@ -1,3 +1,13 @@
+h1 {
+	text-align: center;
+	font-weight: 100;
+	text-decoration: #759b2f underline wavy;
+	letter-spacing: 15px;
+	font-size: 50px;
+	/* font-family: Segoe UI, Futura, Arial, sans-serif; */
+	font-family: Fantasy;
+}
+
 h2 {
 	color: teal;
 	background-color: rgb(108,175,25);
@@ -11,8 +21,14 @@ button {
 p {
 	color: olive;
 	background: papayawhip;
+	line-height: 2;
+}
+
+a {
+	color: #f78120;
+	text-decoration: none;
 }
 
 body {
-	background-color: rgb(55, 68, 168);
+	background-color: rgb(125, 98, 168);
 }
