@@ -1,0 +1,13 @@
+/* カスケードの例
+複数のCSSファイルに跨って同じ要素のスタイルを指定した場合、
+HTMLの<head>内のlinkで後に読み込まれたCSSファイルの方が優先される*/
+h1, h2 {
+    color: olivedrab;
+	font-size: 30px;
+}
+
+/* 同じCSSファイル内では後で定義された方が勝つ */
+h1 {
+	color: #571d40;
+	font-size: 45px;
+}
