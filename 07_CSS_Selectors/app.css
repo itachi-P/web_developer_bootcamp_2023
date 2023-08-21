@@ -11,10 +11,12 @@ body {
 button {
 	font-size: 30px;
 	background-color: #a8dadc;
+	color: brown;
 }
 
 /* タイプセレクタ (全ての<h1>と<h2>に適用) */
-h1, h2 {
+h1,
+h2 {
 	color: #1d3557;
 }
 
@@ -45,13 +47,13 @@ footer a {
 }
 
 /* 隣接セレクタ (同じ親要素を持つ子要素同士である<h2>の直後の<p>に適用)*/
-h2 + p {
+h2+p {
 	font-size: 20px;
 	background-color: pink;
 }
 
 /* 直下セレクタ (footerの直下のネストになる<a>に適用。孫以降は対象外)*/
-footer > a {
+footer>a {
 	color: #457b9d;
 }
 
@@ -59,30 +61,78 @@ footer > a {
 input[type="text"] {
 	width: 300px;
 	background-color: antiquewhite;
-	color: maroon; /* テキストボックスの中に入力される文字の色 */
+	color: maroon;
+	/* テキストボックスの中に入力される文字の色 */
 }
 
-a[href*="google"] { /* hrefにgoogleを含むanchor */
+a[href*="google"] {
+	/* hrefにgoogleを含むanchor */
 	font-size: 25px;
 }
 
-a[href$=".jp"] { /* hrefが.jpで終わる<a> */
+a[href$=".jp"] {
+	/* hrefが.jpで終わる<a> */
 	font-size: 30px;
 }
 
 /* 疑似クラスセレクタ (選択された要素の特定状態によってスタイルを変える) */
+.post a:hover {
+	/* マウスオーバー時に赤色の波下線に変える */
+	text-decoration: underline wavy #e63946;
+}
+
 .post button:hover {
 	background-color: lightcoral;
 }
 
-.post a:hover {
-	text-decoration: underline wavy #e63946;
-}
-
 .post button:active {
+	/* ボタンを押した時に色を変える */
 	background-color: #5c1ee1;
 }
 
-.post:nth-of-type(2n) { /* 2nは偶数番目の要素を選択 */
+/* checkedの状態の時に連動したラベルのスタイルを変える */
+input:checked+label {
+	border: 2px solid #e63946;
+	background-color: turquoise;
+}
+
+/* チェックが入ったチェックボックス */
+input[type="checkbox"]:checked {
+	box-shadow: 0 0 0 3px hotpink;
+}
+
+/* チェックが入ったラジオボタン */
+input[type="radio"]:checked {
+	box-shadow: 0 0 0 3px lawngreen;
+}
+
+.post:nth-of-type(2n) {
+	/* 2nは偶数番目の要素を選択 */
 	background-color: #87a77c;
+}
+
+/* 疑似要素セレクタ 選択された要素の特定の部分にスタイル付け */
+h2::first-letter {
+	font-size: 50px;
+	color: #e63946;
+}
+
+p::first-line {
+	font-size: 20px;
+	color: palegoldenrod;
+}
+
+/* ページ全体に対しハイライト(マウスドラッグ)時の色を変える */
+::selection {
+	background-color: sandybrown;
+}
+
+/* 全てのリンクの前に"🔗"を入れる */
+a::before {
+	content: "🔗";
+}
+
+/* footerに属するリンクの後に"👉Go！！"を入れる */
+footer a::after {
+	content: "👉Go！！";
 }
