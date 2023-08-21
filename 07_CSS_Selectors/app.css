@@ -1,4 +1,5 @@
-/* * {
+/* ユニバーサルセレクタ (全ての要素に適用。あまり使わない)
+* {
 	color: pink;
 	background-color: cyan;
 } */
@@ -12,10 +13,12 @@ button {
 	background-color: #a8dadc;
 }
 
+/* タイプセレクタ (全ての<h1>と<h2>に適用) */
 h1, h2 {
 	color: #1d3557;
 }
 
+/* IDセレクタ (<id>は同じページ中で一意でなければならない) */
 #signup {
 	color: #f1faee;
 	background-color: #457b9d;
@@ -23,17 +26,63 @@ h1, h2 {
 
 span {
 	color: #457b9d;
+	font-size: 15px;
 }
 
+/* クラスセレクタ (同じクラス名を持つ全ての要素に適用) */
 .tag {
 	background-color: #e63946;
 	color: #f1faee;
 }
 
+/* 子孫セレクタ (ネストの深さは関係ない) */
 .post a {
 	color: #a55dcf;
 }
 
 footer a {
 	color: #e63946;
+}
+
+/* 隣接セレクタ (同じ親要素を持つ子要素同士である<h2>の直後の<p>に適用)*/
+h2 + p {
+	font-size: 20px;
+	background-color: pink;
+}
+
+/* 直下セレクタ (footerの直下のネストになる<a>に適用。孫以降は対象外)*/
+footer > a {
+	color: #457b9d;
+}
+
+/* 属性セレクタ (type属性が指定の条件に合う全ての要素に適用) */
+input[type="text"] {
+	width: 300px;
+	background-color: antiquewhite;
+	color: maroon; /* テキストボックスの中に入力される文字の色 */
+}
+
+a[href*="google"] { /* hrefにgoogleを含むanchor */
+	font-size: 25px;
+}
+
+a[href$=".jp"] { /* hrefが.jpで終わる<a> */
+	font-size: 30px;
+}
+
+/* 疑似クラスセレクタ (選択された要素の特定状態によってスタイルを変える) */
+.post button:hover {
+	background-color: lightcoral;
+}
+
+.post a:hover {
+	text-decoration: underline wavy #e63946;
+}
+
+.post button:active {
+	background-color: #5c1ee1;
+}
+
+.post:nth-of-type(2n) { /* 2nは偶数番目の要素を選択 */
+	background-color: #87a77c;
 }
