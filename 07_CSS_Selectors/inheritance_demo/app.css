@@ -1,0 +1,29 @@
+/* CSS Inheritance Demo 
+CSSのプロパティによっては、スタイルを当てた親要素から子要素に継承されるものがある。
+何も定義していない<h2>を「検証」で見てみると、下の方に`inherited from body` (color: purple)の記述がある*/
+body {
+    color: purple;
+}
+
+h1 {
+	color: blanchedalmond;
+}
+
+/* さらに、継承は「一番近い親要素」が優先して行われる */
+section {
+    color: aqua;
+}
+
+/* body>section>form なので、<form>の小要素は全てgreenyellowになる */
+/* form {
+    color: greenyellow;
+} */
+
+/* 明示的に親要素のスタイルを継承する指定方法。
+これがない場合、<label>要素には自動で親要素のスタイル継承が行われるが、
+<input>(テキストボックスの中に打ち込んだ文字)や<button>(ラベルの文字列)には継承が行われない */
+button, input {
+    color: inherit;
+}
+
+/* borderのように、親要素のスタイルを継承しないものもある(暗記する必要はない) */
