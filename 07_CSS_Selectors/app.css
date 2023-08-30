@@ -145,11 +145,23 @@ button:hover {
 	/* ただし下記は競合が起きていないので全てのボタンに適用される */
 	font-size: 10px;
 }
+
 /* 詳細度の格付けルール
 (A)ID >(B)クラス/属性/擬似クラス >(C)要素/疑似要素 (>ユニバーサルセレクタ)
 A > B > C 上位グループが1つでもあれば下位が100個でも敵わない
-a < nav a < .post < .post a < .post span a < .post.tag < #signup /*
-/* 下記は .post button < .post h2 + buttonで+Voteにはこちらが優先適用される */
-.post h2 + button:hover {
-	background-color: olivedrab;
+例) a < nav a < .post < .post a < .post span a < .post.tag < #signup /*
+
+/* 下記は .post button < .post h2 + buttonで +Voteボタンにはこちらが優先適用される
+ .post h2 + button:hover {
+	background-color: yellowgreen;
+} */
+/* 上記は実のところ、同じ.post button:hover　でも後出しルールにより勝つ。
+　　詳細度の確認にもChromeの「検証」機能のHTMLソースコードの右（or下）側の枠内"Styles"タブが便利
+　　ここをいじって見た目を色々変えて即確認できる。（あくまでキャッシュ内の変更なので画面更新で元に戻る） */
+
+/* 悪い例 （詳細度の高いセレクタを使うべき）
+これはカスケードも詳細度の優先順位も無視して強制的に適用されるが、保守性が悪い為極力使わないようにする。
+ただし、限定的な条件下でどうしても使わざるを得ない場面も起き得る。 */
+button {
+	background-color: magenta !important;
 }
